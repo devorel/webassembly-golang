@@ -44,12 +44,16 @@ open /index.html
 </script>
 ```
 
+## create a module
+go mod tidy
+go get
+
 ## compile the code
 GOARCH=amd64 GOOS=linux go build -o ecdsa.o ./ecdsa.go
 
 ## compile the code for webassembly
-GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./jsecdsa.go
-WASM_HEADLESS=off GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./jsecdsa.go
+GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./ecdsa.go
+WASM_HEADLESS=off GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./ecdsa.go
 
 #### environment variables
 export GOROOT=/usr/local/go
