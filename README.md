@@ -1,6 +1,6 @@
-#how to work with webassembly golang
+# How to work with webassembly golang.
 
-##nodejs
+## nodejs
 run
 ```bash
 node init.js
@@ -20,7 +20,7 @@ console.log(a);
 run();
 ```
 
-##web browser
+## web browser
 run server
 ```bash
 npx serve
@@ -44,14 +44,14 @@ open /index.html
 </script>
 ```
 
-##compile the code 
+## compile the code
 GOARCH=amd64 GOOS=linux go build -o ecdsa.o ./ecdsa.go
 
-##compile the code for webassembly
+## compile the code for webassembly
 GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./jsecdsa.go
 WASM_HEADLESS=off GOARCH=wasm GOOS=js go build -o ecdsa.wasm ./jsecdsa.go
 
-####environment variables
+#### environment variables
 export GOROOT=/usr/local/go
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=${PWD}
